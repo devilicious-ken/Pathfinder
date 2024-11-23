@@ -1,4 +1,5 @@
 import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -6,16 +7,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const Onboarding = () => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header Section */}
+      <StatusBar style="light" />
       <View style={styles.header}>
         <Image 
         style={styles.logo} 
-        source={require('../../assets/images/logo.png')}
+        source={require('../../../assets/images/logo.png')}
         resizeMode='contain' /> 
         <Text style={styles.tagline}>Your search for the next dream job is over 🚀</Text>
       </View>
 
-      {/* Start Searching Button */}
       <TouchableOpacity 
       onPress={()=>{router.replace('/sign-in')}}
       style={styles.searchButton}
@@ -23,9 +23,9 @@ const Onboarding = () => {
         <Text style={styles.searchButtonText}>Start Searching →</Text>
       </TouchableOpacity>
 
-      {/* Brand Image Section */}
+
       <Image
-        source={require('../../assets/images/onboarding.png')} // Replace with the correct relative path
+        source={require('../../../assets/images/onboarding.png')} // Replace with the correct relative path
         style={styles.brandImage}
         resizeMode="contain"
       />
